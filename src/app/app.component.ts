@@ -29,6 +29,10 @@ export class AppComponent implements OnInit {
     console.log('menu id', id);
   }
 
+  onSelect(id) {
+    console.log('select id', id);
+  }
+
   onMultiSelect(ids) {
     console.log('multiselect ids', ids);
   }

@@ -1,0 +1,23 @@
+.trigger {
+  border-bottom: 1px solid;
+
+  line-height: 1.4rem;
+  padding-left: .5rem;
+  padding-right: .5rem;
+}
+
+button {
+  display: flex;
+  width: 100%;
+
+  padding: .25rem .5rem;
+  cursor: pointer;
+
+  white-space: nowrap;
+  max-width: 12rem;
+  text-overflow: ellipsis;
+
+  min-height: 2.5rem;
+  box-sizing: border-box;
+  align-items: center;
+}
