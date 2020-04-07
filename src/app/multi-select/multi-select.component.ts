@@ -13,7 +13,7 @@ export type MultiSelectOption = {
 })
 export class MultiSelectComponent {
   @Input() options: MultiSelectOption[];
-  @Output() selectedChange = new EventEmitter<string[]>();
+  @Output() selected = new EventEmitter<string[]>();
   private selectedOptions: MultiSelectOption[];
   title = 'Select Option(s)';
   isOpen = false;
@@ -23,7 +23,7 @@ export class MultiSelectComponent {
   onChange(index: number): void {
     this.options[index].checked = !this.options[index].checked;
     this.selectedOptions = this.options.filter(({ checked }) => checked);
-    this.selectedChange.emit(this.selectedOptions.map(({ id }) => id));
+    this.selected.emit(this.selectedOptions.map(({ id }) => id));
 
     this.updateTitle();
   }

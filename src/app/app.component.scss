@@ -1,3 +1,10 @@
-.multi {
+:host {
+  display: block;
+  max-width: 40rem;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+.dropdown {
   margin: 0 1ch;
 }

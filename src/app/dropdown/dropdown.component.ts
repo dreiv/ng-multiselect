@@ -1,15 +1,17 @@
-import { Component, ViewChild, ElementRef, Output, EventEmitter, Input } from '@angular/core';
+import { Component, ViewChild, ElementRef, Output, EventEmitter, Input, OnInit, OnDestroy } from '@angular/core';
 import { UtilitiesService } from '../utilities.service';
-import { find } from 'rxjs/operators';
+import { takeUntil, find } from 'rxjs/operators';
+import { Observable, Subject } from 'rxjs';
 
 @Component({
   selector: 'app-dropdown',
   templateUrl: './dropdown.component.html',
   styleUrls: ['./dropdown.component.scss']
 })
-export class DropdownComponent {
+export class DropdownComponent implements OnInit, OnDestroy {
   @ViewChild('dropdown') dropdownRef: ElementRef
   @Output() openChange = new EventEmitter();
+  @Input() toggle: Observable<boolean>;
   set open(val) {
     this.dropdownRef.nativeElement.open = val;
     this.openChange.emit(val);
@@ -17,8 +19,21 @@ export class DropdownComponent {
   get open(): boolean {
     return this.dropdownRef.nativeElement.open;
   }
+  destroy$ = new Subject<void>();
 
   constructor(private utilitiesService: UtilitiesService) { }
+
+  ngOnInit() {
+    if (this.toggle) {
+      this.toggle
+        .pipe(takeUntil(this.destroy$))
+        .subscribe(val => { this.open = !val });
+    }
+  }
+
+  ngOnDestroy() {
+    this.destroy$.next();
+  }
 
   onClick() {
     this.openChange.emit(!this.open);
