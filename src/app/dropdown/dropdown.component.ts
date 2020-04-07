@@ -27,7 +27,7 @@ export class DropdownComponent implements OnInit, OnDestroy {
     if (this.toggle) {
       this.toggle
         .pipe(takeUntil(this.destroy$))
-        .subscribe(val => { this.open = !val });
+        .subscribe(isOpen => { this.open = isOpen });
     }
   }
 

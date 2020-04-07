@@ -5,3 +5,15 @@
 *:after {
   box-sizing: border-box;
 }
+
+button {
+  margin: 0;
+  padding: 0;
+  border-width: 0;
+
+  color: inherit;
+  text-align: inherit;
+
+  background-color: transparent;
+  cursor: pointer;
+}

@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { DropdownComponent } from './dropdown/dropdown.component';
 import { MultiSelectComponent } from './multi-select/multi-select.component';
 import { MenuComponent } from './menu/menu.component';
+import { SelectComponent } from './select/select.component';
 
 @NgModule({
   declarations: [
@@ -12,6 +13,7 @@ import { MenuComponent } from './menu/menu.component';
     DropdownComponent,
     MultiSelectComponent,
     MenuComponent,
+    SelectComponent,
   ],
   imports: [
     BrowserModule

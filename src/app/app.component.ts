@@ -21,7 +21,6 @@ export class AppComponent implements OnInit {
 
     this.menuOptions = [...Array(5)].map((_, i) => ({
       id: getUid(),
-      closeOnSelect: true,
       name: `Option number ${i}`
     }))
   }

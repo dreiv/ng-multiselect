@@ -2,7 +2,6 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 export type MenuOption = {
   id: string,
-  closeOnSelect: boolean;
   name: string;
 }
 
@@ -22,7 +21,7 @@ export class MenuComponent {
     const selectedOption = this.options[index];
 
     this.selected.emit(selectedOption.id);
-    this.toggle.emit(selectedOption.closeOnSelect);
+    this.toggle.emit(false);
   }
 
 }
