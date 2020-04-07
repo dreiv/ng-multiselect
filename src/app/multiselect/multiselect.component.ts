@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-multiselect',
@@ -6,10 +6,5 @@ import { Component, ViewChild } from '@angular/core';
   styleUrls: ['./multiselect.component.scss']
 })
 export class MultiselectComponent {
-  @ViewChild('select') select;
-
-  outside() {
-    console.log('click outside');
-  }
 
 }
