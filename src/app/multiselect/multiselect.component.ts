@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-multiselect',
   templateUrl: './multiselect.component.html',
   styleUrls: ['./multiselect.component.scss']
 })
-export class MultiselectComponent implements OnInit {
+export class MultiselectComponent {
+  @ViewChild('select') select;
 
-  constructor() { }
-
-  ngOnInit(): void {
+  outside() {
+    console.log('click outside');
   }
 
 }

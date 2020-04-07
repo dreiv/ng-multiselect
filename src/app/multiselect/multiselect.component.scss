@@ -1,0 +1,53 @@
+:host {
+  display: inline-block;
+}
+
+::-webkit-details-marker {
+  display: none;
+}
+
+details {
+  position: relative;
+}
+
+summary {
+  border-bottom: 1px solid;
+
+  line-height: 1.4rem;
+
+  cursor: pointer;
+
+  &:focus,
+  &:hover {
+    background-color: #f7f7f7;
+  }
+}
+
+ul {
+  position: absolute;
+
+  max-height: 20rem;
+  margin: 0;
+  padding: 0;
+  border: 1px solid;
+  border-top: 0;
+  overflow: auto;
+
+  list-style: none;
+  background-color: white;
+}
+
+label {
+  display: block;
+  padding: 0.5rem;
+
+  cursor: pointer;
+
+  &:focus-within {
+    background-color: #ededed;
+  }
+
+  &:hover {
+    background-color: #f7f7f7;
+  }
+}
