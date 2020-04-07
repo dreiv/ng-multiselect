@@ -43,11 +43,11 @@ label {
 
   cursor: pointer;
 
-  &:focus-within {
-    background-color: #ededed;
-  }
-
   &:hover {
     background-color: #f7f7f7;
+  }
+
+  &:focus-within {
+    background-color: #ededed;
   }
 }
