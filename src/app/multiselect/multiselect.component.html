@@ -1,5 +1,5 @@
-<details #select (clickOutside)="select.removeAttribute('open')">
-  <summary>Toggle Multiselect</summary>
+<details #select>
+  <summary (click)="onClick()">Toggle Multiselect</summary>
 
   <ul class="options">
     <li><label><input type="checkbox">Option number 1</label></li>
