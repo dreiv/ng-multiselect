@@ -1,0 +1,11 @@
+<details #dropdown>
+  <summary (click)="onClick()">
+    <ng-content select=".title"></ng-content>
+  </summary>
+
+  <div class="anchor">
+    <ul class="options">
+      <ng-content select="li"></ng-content>
+    </ul>
+  </div>
+</details>

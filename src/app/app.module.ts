@@ -2,12 +2,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { MultiselectComponent } from './multiselect/multiselect.component';
+import { DropdownComponent } from './dropdown/dropdown.component';
+import { MultiSelectComponent } from './multi-select/multi-select.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MultiselectComponent,
+    DropdownComponent,
+    MultiSelectComponent,
   ],
   imports: [
     BrowserModule

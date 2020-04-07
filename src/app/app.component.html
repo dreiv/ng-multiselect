@@ -2,7 +2,8 @@
 
 <button>Focus target</button>
 
-<app-multiselect class="multi"></app-multiselect>
+<app-multi-select class="multi" [options]="multiSelectOptions" (selected)="onMultiSelect($event)">
+</app-multi-select>
 
 <a href="#">Focus Target</a>
 

@@ -6,15 +6,7 @@
   display: none;
 }
 
-details {
-  position: relative;
-}
-
 summary {
-  border-bottom: 1px solid;
-
-  line-height: 1.4rem;
-
   cursor: pointer;
 
   &:focus,
@@ -23,26 +15,25 @@ summary {
   }
 }
 
+.anchor {
+  position: relative;
+}
+
 ul {
   position: absolute;
 
-  max-height: 20rem;
+  top: .5rem;
+  max-height: 12rem;
   margin: 0;
   padding: 0;
   border: 1px solid;
-  border-top: 0;
   overflow: auto;
 
   list-style: none;
   background-color: white;
 }
 
-label {
-  display: block;
-  padding: 0.5rem;
-
-  cursor: pointer;
-
+::ng-deep li {
   &:hover {
     background-color: #f7f7f7;
   }

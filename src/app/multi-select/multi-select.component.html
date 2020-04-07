@@ -1,0 +1,10 @@
+<app-dropdown>
+  <span class="title">{{title}}</span>
+
+  <li *ngFor="let option of options; let i = index">
+    <label>
+      <input type="checkbox" [checked]="option.checked" (change)="onChange(i)">
+      {{ option.name }}
+    </label>
+  </li>
+</app-dropdown>
