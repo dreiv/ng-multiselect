@@ -1,5 +1,7 @@
 <app-dropdown [(toggle)]="toggle">
-  <div class="trigger"></div>
+  <div class="trigger">
+    <ng-content selector=".trigger"></ng-content>
+  </div>
 
   <li *ngFor="let option of options; let i = index">
     <button (click)="onSelect(i)">{{ option.name }}</button>

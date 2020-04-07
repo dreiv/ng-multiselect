@@ -1,9 +1,30 @@
 <h1>Dropdown demos:</h1>
 
-<h2>Menu (Context)</h2>
-<button>Focus target</button>
+<h2>Menu</h2>
+
+<p>Context:</p>
+<a href="#">Focus Target</a>
 
 <app-menu class="dropdown" [options]="menuOptions" (selected)="onMenuSelect($event)">
+  <app-menu-context class="trigger"></app-menu-context>
+</app-menu>
+
+<a href="#">Focus Target</a>
+
+<p>Text:</p>
+<a href="#">Focus Target</a>
+
+<app-menu class="dropdown" [options]="menuOptions" (selected)="onMenuSelect($event)">
+  <app-menu-text class="trigger">MENU</app-menu-text>
+</app-menu>
+
+<a href="#">Focus Target</a>
+
+<p>Burger:</p>
+<a href="#">Focus Target</a>
+
+<app-menu class="dropdown" [options]="menuOptions" (selected)="onMenuSelect($event)">
+  <app-menu-burger class="trigger">MENU</app-menu-burger>
 </app-menu>
 
 <a href="#">Focus Target</a>
@@ -13,7 +34,7 @@
 <hr>
 
 <h2>Select</h2>
-<button>Focus target</button>
+<a href="#">Focus Target</a>
 
 <app-select class="dropdown" [options]="multiSelectOptions" (selected)="onSelect($event)">
 </app-select>
@@ -25,7 +46,7 @@
 <hr>
 
 <h2>Multiselect</h2>
-<button>Focus target</button>
+<a href="#">Focus Target</a>
 
 <app-multi-select class="dropdown" [options]="multiSelectOptions" (selected)="onMultiSelect($event)">
 </app-multi-select>

@@ -1,0 +1,23 @@
+:host {
+  display: block;
+  text-align: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: .5rem;
+  font-size: 18px;
+
+  &::before {
+    width: 0.25rem;
+    height: 0.25rem;
+
+    display: inline-block;
+    border-radius: 50%;
+
+    vertical-align: middle;
+
+    background-color: #333;
+    box-shadow: 0px -6px #333, 0px 6px #333;
+
+    content: '';
+  }
+}

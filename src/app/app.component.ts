@@ -19,7 +19,7 @@ export class AppComponent implements OnInit {
       name: `Option number ${i}`
     }))
 
-    this.menuOptions = [...Array(5)].map((_, i) => ({
+    this.menuOptions = [...Array(4)].map((_, i) => ({
       id: getUid(),
       name: `Option number ${i}`
     }))
