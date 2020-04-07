@@ -9,19 +9,24 @@ import { find } from 'rxjs/operators';
 })
 export class DropdownComponent {
   @ViewChild('dropdown') dropdownRef: ElementRef
-  @Output() onToggle = new EventEmitter();
-  @Input() open = false;
-
+  @Output() openChange = new EventEmitter();
+  set open(val) {
+    this.dropdownRef.nativeElement.open = val;
+    this.openChange.emit(val);
+  }
+  get open(): boolean {
+    return this.dropdownRef.nativeElement.open;
+  }
 
   constructor(private utilitiesService: UtilitiesService) { }
 
   onClick() {
-    const dropdown = this.dropdownRef.nativeElement;
+    this.openChange.emit(!this.open);
 
-    if (!dropdown.open) { // triggers when dropdown is opened
+    if (!this.open) { // triggers when dropdown is opened
       this.utilitiesService.documentClicked$
-        .pipe(find(({ target }) => !dropdown.contains(target)))
-        .subscribe(() => { dropdown.open = false })
+        .pipe(find(({ target }) => !this.dropdownRef.nativeElement.contains(target)))
+        .subscribe(() => { this.open = false })
     }
   }
 }

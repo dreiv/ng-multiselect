@@ -1,5 +1,5 @@
-<app-dropdown>
-  <span class="title">{{title}}</span>
+<app-dropdown (openChange)="onOpenChange($event)">
+  <span class="title">{{title}} {{isOpen ? '▲' : '▼'}}</span>
 
   <li *ngFor="let option of options; let i = index">
     <label>
