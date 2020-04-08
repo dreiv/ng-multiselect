@@ -9,6 +9,7 @@
 summary {
   cursor: pointer;
 
+  details[open] &,
   &:focus,
   &:hover {
     background-color: #f7f7f7;
@@ -19,7 +20,7 @@ summary {
   position: relative;
 }
 
-ul {
+.options {
   position: absolute;
 
   top: .5rem;
@@ -29,11 +30,10 @@ ul {
   border: 1px solid;
   overflow: auto;
 
-  list-style: none;
   background-color: white;
 }
 
-::ng-deep li {
+::ng-deep [option] {
   &:hover {
     background-color: #f7f7f7;
   }

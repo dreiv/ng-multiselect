@@ -1,10 +1,8 @@
 <app-dropdown (openChange)="onOpenChange($event)">
   <span class="trigger">{{title}} {{isOpen ? '▲' : '▼'}}</span>
 
-  <li *ngFor="let option of options; let i = index">
-    <label>
-      <input type="checkbox" [checked]="option.checked" (change)="onChange(i)">
-      {{ option.name }}
-    </label>
-  </li>
+  <label *ngFor="let option of options; let i = index" option>
+    <input type="checkbox" [checked]="option.checked" (change)="onChange(i)">
+    {{ option.name }}
+  </label>
 </app-dropdown>

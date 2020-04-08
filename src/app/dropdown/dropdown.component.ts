@@ -1,17 +1,25 @@
-import { Component, ViewChild, ElementRef, Output, EventEmitter, Input, OnInit, OnDestroy } from '@angular/core';
+import { Component, ViewChild, ElementRef, Output, EventEmitter, Input, OnInit, OnDestroy, ContentChildren, QueryList, AfterContentInit, Directive } from '@angular/core';
 import { UtilitiesService } from '../utilities.service';
 import { takeUntil, find } from 'rxjs/operators';
 import { Observable, Subject } from 'rxjs';
+
+@Directive({ selector: '[option]' })
+export class Option { }
 
 @Component({
   selector: 'app-dropdown',
   templateUrl: './dropdown.component.html',
   styleUrls: ['./dropdown.component.scss']
 })
-export class DropdownComponent implements OnInit, OnDestroy {
-  @ViewChild('dropdown') dropdownRef: ElementRef
-  @Output() openChange = new EventEmitter();
-  @Input() toggle: Observable<boolean>;
+export class DropdownComponent implements OnInit, AfterContentInit, OnDestroy {
+  @ViewChild('dropdown')
+  dropdownRef: ElementRef;
+  @ContentChildren(Option, { descendants: true, read: ElementRef })
+  options: QueryList<Option>;
+  @Output()
+  openChange = new EventEmitter();
+  @Input()
+  toggle: Observable<boolean>;
   set open(val) {
     this.dropdownRef.nativeElement.open = val;
     this.openChange.emit(val);
@@ -29,6 +37,10 @@ export class DropdownComponent implements OnInit, OnDestroy {
         .pipe(takeUntil(this.destroy$))
         .subscribe(isOpen => { this.open = isOpen });
     }
+  }
+
+  ngAfterContentInit() {
+    console.log('options', this.options)
   }
 
   ngOnDestroy() {
