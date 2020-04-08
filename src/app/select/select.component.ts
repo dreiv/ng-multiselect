@@ -9,7 +9,7 @@ import { MultiSelectOption } from '../multi-select/multi-select.component';
 export class SelectComponent {
   @Input() options: MultiSelectOption[];
   @Output() selected = new EventEmitter<string>();
-  toggle = new EventEmitter<boolean>();
+  toggle$ = new EventEmitter<boolean>();
   title = 'Select Option';
   isOpen = false;
 
@@ -18,12 +18,12 @@ export class SelectComponent {
   onSelect(index: number): void {
     const selectedOption = this.options[index];
     this.selected.emit(selectedOption.id);
-    this.toggle.emit(false);
+    this.toggle$.emit(false);
 
     this.title = selectedOption.name;
   }
 
-  onOpenChange(isOpen) {
+  onMenuToggle(isOpen) {
     this.isOpen = isOpen;
   }
 

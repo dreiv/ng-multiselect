@@ -13,7 +13,7 @@ export type MenuOption = {
 export class MenuComponent {
   @Input() options: MenuOption[];
   @Output() selected = new EventEmitter<string>();
-  toggle = new EventEmitter<boolean>();
+  toggle$ = new EventEmitter<boolean>();
 
   constructor() { }
 
@@ -21,7 +21,7 @@ export class MenuComponent {
     const selectedOption = this.options[index];
 
     this.selected.emit(selectedOption.id);
-    this.toggle.emit(false);
+    this.toggle$.emit(false);
   }
 
 }

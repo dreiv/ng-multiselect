@@ -1,4 +1,4 @@
-<app-dropdown (openChange)="onOpenChange($event)">
+<app-dropdown (toggled$)="onMenuToggle($event)">
   <span dropdown-trigger>{{title}} {{isOpen ? '▲' : '▼'}}</span>
 
   <label *ngFor="let option of options; let i = index" dropdown-option>

@@ -34,7 +34,7 @@ export class MultiSelectComponent {
     this.title = selectedNo ? `${selectedNo} options selected` : 'Select Option(s)';
   }
 
-  onOpenChange(isOpen) {
+  onMenuToggle(isOpen) {
     this.isOpen = isOpen;
   }
 
