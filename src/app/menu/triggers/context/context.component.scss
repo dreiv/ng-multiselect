@@ -1,16 +1,17 @@
 :host {
   display: block;
-  text-align: center;
   width: 2.5rem;
   height: 2.5rem;
-  padding: .5rem;
+  padding: 0.5rem;
+
   font-size: 18px;
+  text-align: center;
 
   &::before {
-    width: 0.25rem;
-    height: 0.25rem;
 
     display: inline-block;
+    width: 0.25rem;
+    height: 0.25rem;
     border-radius: 50%;
 
     vertical-align: middle;
