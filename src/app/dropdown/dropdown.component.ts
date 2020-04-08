@@ -1,10 +1,23 @@
-import { Component, ViewChild, ElementRef, Output, EventEmitter, Input, OnInit, OnDestroy, ContentChildren, QueryList, AfterContentInit, Directive } from '@angular/core';
+import {
+  Component,
+  ViewChild,
+  ElementRef,
+  Output,
+  EventEmitter,
+  Input,
+  OnInit,
+  OnDestroy,
+  ContentChildren,
+  QueryList,
+  AfterContentInit,
+  Directive
+} from '@angular/core';
 import { UtilitiesService } from '../utilities.service';
 import { takeUntil, find } from 'rxjs/operators';
 import { Observable, Subject, fromEvent } from 'rxjs';
 
 @Directive({ selector: '[dropdown-option]' })
-export class DropdownOption { }
+export class DropdownOption {}
 
 @Component({
   selector: 'app-dropdown',
@@ -30,20 +43,23 @@ export class DropdownComponent implements OnInit, AfterContentInit, OnDestroy {
   focusedIdx = -1;
   destroy$ = new Subject<void>();
 
-  constructor(private utilitiesService: UtilitiesService) { }
+  constructor(private utilitiesService: UtilitiesService) {}
 
   ngOnInit() {
-    this.toggle$ && this.toggle$
-      .pipe(takeUntil(this.destroy$))
-      .subscribe(isOpen => { this.open = isOpen });
+    this.toggle$ &&
+      this.toggle$.pipe(takeUntil(this.destroy$)).subscribe((isOpen) => {
+        this.open = isOpen;
+      });
   }
 
   ngAfterContentInit() {
     this.options.toArray().forEach((option, index) => {
       fromEvent(option.nativeElement, 'click')
         .pipe(takeUntil(this.destroy$))
-        .subscribe(() => { this.focusedIdx = index; });
-    })
+        .subscribe(() => {
+          this.focusedIdx = index;
+        });
+    });
   }
 
   ngOnDestroy() {
@@ -53,10 +69,15 @@ export class DropdownComponent implements OnInit, AfterContentInit, OnDestroy {
   onClick() {
     this.toggled$.emit(!this.open);
 
-    if (!this.open) { // triggers when dropdown is opened
+    if (!this.open) {
+      // triggers when dropdown is opened
       this.utilitiesService.documentClicked$
-        .pipe(find(({ target }) => !this.dropdownRef.nativeElement.contains(target)))
-        .subscribe(() => { this.open = false })
+        .pipe(
+          find(({ target }) => !this.dropdownRef.nativeElement.contains(target))
+        )
+        .subscribe(() => {
+          this.open = false;
+        });
 
       this.utilitiesService.documentKeyPressed$
         .pipe(takeUntil(this.toggled$))
@@ -64,21 +85,22 @@ export class DropdownComponent implements OnInit, AfterContentInit, OnDestroy {
           const options = this.options.toArray();
 
           switch (event.key) {
-            case "Escape":
+            case 'Escape':
               this.open = false;
               break;
-            case "ArrowUp":
+            case 'ArrowUp':
               event.preventDefault();
-              this.focusedIdx = (this.focusedIdx - 1 + options.length) % options.length;
+              this.focusedIdx =
+                (this.focusedIdx - 1 + options.length) % options.length;
               options[this.focusedIdx].nativeElement.focus();
               break;
-            case "ArrowDown":
+            case 'ArrowDown':
               event.preventDefault();
               this.focusedIdx = (this.focusedIdx + 1) % options.length;
               options[this.focusedIdx].nativeElement.focus();
               break;
           }
-        })
+        });
     }
   }
 }

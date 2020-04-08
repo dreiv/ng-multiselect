@@ -13,8 +13,6 @@ export class SelectComponent {
   title = 'Select Option';
   isOpen = false;
 
-  constructor() { }
-
   onSelect(index: number): void {
     const selectedOption = this.options[index];
     this.selected.emit(selectedOption.id);
@@ -23,8 +21,7 @@ export class SelectComponent {
     this.title = selectedOption.name;
   }
 
-  onMenuToggle(isOpen) {
+  onMenuToggle(isOpen): void {
     this.isOpen = isOpen;
   }
-
 }

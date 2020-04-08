@@ -3,7 +3,11 @@
     <ng-content selector="[menu-trigger]"></ng-content>
   </div>
 
-  <button (click)="onSelect(i)" *ngFor="let option of options; let i = index" dropdown-option>
+  <button
+    (click)="onSelect(i)"
+    *ngFor="let option of options; let i = index"
+    dropdown-option
+  >
     {{ option.name }}
   </button>
 </app-dropdown>

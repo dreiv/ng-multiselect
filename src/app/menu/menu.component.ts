@@ -1,9 +1,9 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 export type MenuOption = {
-  id: string,
+  id: string;
   name: string;
-}
+};
 
 @Component({
   selector: 'app-menu',
@@ -15,13 +15,10 @@ export class MenuComponent {
   @Output() selected = new EventEmitter<string>();
   toggle$ = new EventEmitter<boolean>();
 
-  constructor() { }
-
-  onSelect(index) {
+  onSelect(index): void {
     const selectedOption = this.options[index];
 
     this.selected.emit(selectedOption.id);
     this.toggle$.emit(false);
   }
-
 }

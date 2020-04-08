@@ -1,10 +1,10 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 export type MultiSelectOption = {
-  id: string,
+  id: string;
   checked: boolean;
   name: string;
-}
+};
 
 @Component({
   selector: 'app-multi-select',
@@ -18,8 +18,6 @@ export class MultiSelectComponent {
   title = 'Select Option(s)';
   isOpen = false;
 
-  constructor() { }
-
   onChange(index: number): void {
     this.options[index].checked = !this.options[index].checked;
     this.selectedOptions = this.options.filter(({ checked }) => checked);
@@ -28,14 +26,15 @@ export class MultiSelectComponent {
     this.updateTitle();
   }
 
-  updateTitle() {
+  updateTitle(): void {
     const selectedNo = this.selectedOptions.length;
 
-    this.title = selectedNo ? `${selectedNo} options selected` : 'Select Option(s)';
+    this.title = selectedNo
+      ? `${selectedNo} options selected`
+      : 'Select Option(s)';
   }
 
-  onMenuToggle(isOpen) {
+  onMenuToggle(isOpen): void {
     this.isOpen = isOpen;
   }
-
 }

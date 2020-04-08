@@ -5,7 +5,11 @@
 <p>Context:</p>
 <a href="#">Focus Target</a>
 
-<app-menu class="dropdown" [options]="menuOptions" (selected)="onMenuSelect($event)">
+<app-menu
+  class="dropdown"
+  [options]="menuOptions"
+  (selected)="onMenuSelect($event)"
+>
   <app-menu-context menu-trigger></app-menu-context>
 </app-menu>
 
@@ -14,7 +18,11 @@
 <p>Text:</p>
 <a href="#">Focus Target</a>
 
-<app-menu class="dropdown" [options]="menuOptions" (selected)="onMenuSelect($event)">
+<app-menu
+  class="dropdown"
+  [options]="menuOptions"
+  (selected)="onMenuSelect($event)"
+>
   <app-menu-text menu-trigger>MENU</app-menu-text>
 </app-menu>
 
@@ -23,7 +31,11 @@
 <p>Burger:</p>
 <a href="#">Focus Target</a>
 
-<app-menu class="dropdown" [options]="menuOptions" (selected)="onMenuSelect($event)">
+<app-menu
+  class="dropdown"
+  [options]="menuOptions"
+  (selected)="onMenuSelect($event)"
+>
   <app-menu-burger menu-trigger>MENU</app-menu-burger>
 </app-menu>
 
@@ -31,26 +43,37 @@
 
 <p>Allows selection of an option, and outputs it through an event emitter.</p>
 
-<hr>
+<hr />
 
 <h2>Select</h2>
 <a href="#">Focus Target</a>
 
-<app-select class="dropdown" [options]="multiSelectOptions" (selected)="onSelect($event)">
+<app-select
+  class="dropdown"
+  [options]="multiSelectOptions"
+  (selected)="onSelect($event)"
+>
 </app-select>
 
 <a href="#">Focus Target</a>
 
 <p>Allows selection of one option, and outputs it through an event emitter.</p>
 
-<hr>
+<hr />
 
 <h2>Multiselect</h2>
 <a href="#">Focus Target</a>
 
-<app-multi-select class="dropdown" [options]="multiSelectOptions" (selected)="onMultiSelect($event)">
+<app-multi-select
+  class="dropdown"
+  [options]="multiSelectOptions"
+  (selected)="onMultiSelect($event)"
+>
 </app-multi-select>
 
 <a href="#">Focus Target</a>
 
-<p>Allows selection of multiple options, and outputs them through an event emitter.</p>
+<p>
+  Allows selection of multiple options, and outputs them through an event
+  emitter.
+</p>
