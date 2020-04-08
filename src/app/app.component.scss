@@ -1,10 +1,41 @@
+@import 'abstracts/mixins';
+
 :host {
   display: block;
-  max-width: 40rem;
-  margin: 2rem auto;
-  padding: 1rem;
+  width: 100%;
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: 2rem 1rem 4rem;
+}
+
+.row {
+  @include flex-center-vert;
 }
 
 .dropdown {
   margin: 0 1ch;
+}
+
+.menu-context,
+.menu-burger {
+  @include box(2.5rem);
+  @include flex-center;
+
+  padding: 0.5rem;
+
+  font-size: 1.25rem;
+}
+
+.menu-text,
+.menu-mix {
+  @include flex-center;
+
+  height: 2.5rem;
+  padding: 0.25rem 1rem;
+}
+
+.menu-mix .icon-burger {
+  @include flex-center-vert;
+
+  margin-left: 1ch;
 }

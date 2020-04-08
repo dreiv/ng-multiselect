@@ -9,9 +9,6 @@ import {
 import { MultiSelectComponent } from './multi-select/multi-select.component';
 import { MenuComponent } from './menu/menu.component';
 import { SelectComponent } from './select/select.component';
-import { ContextComponent } from './menu/triggers/context/context.component';
-import { TextComponent } from './menu/triggers/text/text.component';
-import { BurgerComponent } from './menu/triggers/burger/burger.component';
 
 @NgModule({
   declarations: [
@@ -20,10 +17,7 @@ import { BurgerComponent } from './menu/triggers/burger/burger.component';
     DropdownComponent,
     MultiSelectComponent,
     MenuComponent,
-    SelectComponent,
-    ContextComponent,
-    TextComponent,
-    BurgerComponent
+    SelectComponent
   ],
   imports: [BrowserModule],
   providers: [],

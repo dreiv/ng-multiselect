@@ -1,7 +1,5 @@
 <app-dropdown [(toggle$)]="toggle$">
-  <div dropdown-trigger>
-    <ng-content selector="[menu-trigger]"></ng-content>
-  </div>
+  <ng-content selector="[menu-trigger]" dropdown-trigger></ng-content>
 
   <button
     (click)="onSelect(i)"

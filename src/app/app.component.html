@@ -1,30 +1,52 @@
 <h1>Dropdown demos:</h1>
 
+<p>Each of the examples below is interactive. They are all variations of a dropdown.</p>
+
 <h2>Menu</h2>
+<p>Allows selection of an option, and outputs it through an event emitter. It can also have non reactive elements, like a spacer for example.</p>
 
-<p>Context:</p>
-<a href="#">Focus Target</a>
+<h3>with different triggers:</h3>
 
-<app-menu
-  class="dropdown"
-  [options]="menuOptions"
-  (selected)="onMenuSelect($event)"
->
-  <app-menu-context menu-trigger></app-menu-context>
-</app-menu>
+<div class="row">
+  context:
+  <app-menu
+    class="dropdown"
+    [options]="menuOptions"
+    (selected)="onMenuSelect($event)"
+  >
+    <div class="menu-context icon-context" menu-trigger></div>
+  </app-menu>
 
-<a href="#">Focus Target</a>
+  text:
+  <app-menu
+    class="dropdown"
+    [options]="menuOptions"
+    (selected)="onMenuSelect($event)"
+  >
+    <span class="menu-text" menu-trigger>MENU</span>
+  </app-menu>
 
-<p>Text:</p>
-<a href="#">Focus Target</a>
+  burger:
+  <app-menu
+    class="dropdown"
+    [options]="menuOptions"
+    (selected)="onMenuSelect($event)"
+  >
+     <div class="menu-burger icon-burger" menu-trigger></div>
+  </app-menu>
 
-<app-menu
-  class="dropdown"
-  [options]="menuOptions"
-  (selected)="onMenuSelect($event)"
->
-  <app-menu-text menu-trigger>MENU</app-menu-text>
-</app-menu>
+  text + icon:
+  <app-menu
+    class="dropdown"
+    [options]="menuOptions"
+    (selected)="onMenuSelect($event)"
+  >
+    <div class="menu-mix" menu-trigger>
+      MENU
+      <span class="icon-burger"></span>
+    </div>
+  </app-menu>
+</div>
 
 <a href="#">Focus Target</a>
 
@@ -36,12 +58,10 @@
   [options]="menuOptions"
   (selected)="onMenuSelect($event)"
 >
-  <app-menu-burger menu-trigger>MENU</app-menu-burger>
+  <span menu-trigger>MENU</span>
 </app-menu>
 
 <a href="#">Focus Target</a>
-
-<p>Allows selection of an option, and outputs it through an event emitter.</p>
 
 <hr />
 
