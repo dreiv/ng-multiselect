@@ -3,8 +3,8 @@ import { UtilitiesService } from '../utilities.service';
 import { takeUntil, find } from 'rxjs/operators';
 import { Observable, Subject } from 'rxjs';
 
-@Directive({ selector: '[option]' })
-export class Option { }
+@Directive({ selector: '[dropdown-option]' })
+export class DropdownOption { }
 
 @Component({
   selector: 'app-dropdown',
@@ -14,8 +14,8 @@ export class Option { }
 export class DropdownComponent implements OnInit, AfterContentInit, OnDestroy {
   @ViewChild('dropdown')
   dropdownRef: ElementRef;
-  @ContentChildren(Option, { descendants: true, read: ElementRef })
-  options: QueryList<Option>;
+  @ContentChildren(DropdownOption)
+  options: QueryList<DropdownOption>;
   @Output()
   openChange = new EventEmitter();
   @Input()
@@ -40,7 +40,7 @@ export class DropdownComponent implements OnInit, AfterContentInit, OnDestroy {
   }
 
   ngAfterContentInit() {
-    console.log('options', this.options)
+    console.log('options', this.options);
   }
 
   ngOnDestroy() {

@@ -1,4 +1,4 @@
-.trigger {
+[dropdown-trigger] {
   border-bottom: 1px solid;
   height: 2.5rem;
   display: flex;
@@ -10,7 +10,7 @@
   padding-right: .5rem;
 }
 
-[option] {
+[dropdown-option] {
   display: flex;
 
   padding: .25rem .5rem;

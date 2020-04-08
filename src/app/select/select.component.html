@@ -1,5 +1,5 @@
 <app-dropdown (openChange)="onOpenChange($event)" [(toggle)]="toggle">
-  <div class="trigger">{{title}} {{isOpen ? '▲' : '▼'}}</div>
+  <div dropdown-trigger>{{title}} {{isOpen ? '▲' : '▼'}}</div>
 
-  <button (click)="onSelect(i)" *ngFor="let option of options; let i = index" option>{{ option.name }}</button>
+  <button (click)="onSelect(i)" *ngFor="let option of options; let i = index" dropdown-option>{{ option.name }}</button>
 </app-dropdown>

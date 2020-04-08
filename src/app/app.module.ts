@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { Option, DropdownComponent } from './dropdown/dropdown.component';
+import { DropdownOption, DropdownComponent } from './dropdown/dropdown.component';
 import { MultiSelectComponent } from './multi-select/multi-select.component';
 import { MenuComponent } from './menu/menu.component';
 import { SelectComponent } from './select/select.component';
@@ -13,7 +13,7 @@ import { BurgerComponent } from './menu/triggers/burger/burger.component';
 @NgModule({
   declarations: [
     AppComponent,
-    Option,
+    DropdownOption,
     DropdownComponent,
     MultiSelectComponent,
     MenuComponent,

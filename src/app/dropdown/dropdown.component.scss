@@ -33,7 +33,7 @@ summary {
   background-color: white;
 }
 
-::ng-deep [option] {
+::ng-deep [dropdown-option] {
   &:hover {
     background-color: #f7f7f7;
   }

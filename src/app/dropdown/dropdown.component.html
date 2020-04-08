@@ -1,11 +1,11 @@
 <details #dropdown>
   <summary (click)="onClick()">
-    <ng-content select=".trigger"></ng-content>
+    <ng-content select="[dropdown-trigger]"></ng-content>
   </summary>
 
   <div class="anchor">
     <div class="options">
-      <ng-content select="[option]"></ng-content>
+      <ng-content select="[dropdown-option]"></ng-content>
     </div>
   </div>
 </details>
